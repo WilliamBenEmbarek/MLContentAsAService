@@ -2,6 +2,8 @@ var personRest = require('./personRequestHandler');
 var catRest = require('./catRequestHandler');
 var artRest = require('./artworkRequestHandler');
 var horseRest = require('./horseRequestHandler');
+var deepAiRest = require('./deepAiRequestHandler');
+
 var express = require("express");
 var app = express();
 
@@ -41,14 +43,13 @@ app.get("/horse/:resX/:resY", (req, res, next) => {
     horseRest(req,res,next,req.params.resX,req.params.resY);
 });
 
-app.get("/tradeshift", (req, res, next) => {
-    tradeshiftRest(req,res,next,256,256);
+app.get("/:image/", (req, res, next) => {
+    deepAiRest(req, res, next,256,256, req.params.image);
 });
 
-app.get("/tradeshift/:resX/:resY", (req, res, next) => {
-    tradeshiftRest(req,res,next,req.params.resX,req.params.resY);
+app.get("/:image/:resX/:resY", (req, res, next) => {
+    deepAiRest(req, res, next, req.params.resX, req.params.resY, req.params.image);
 });
-
 
 app.use(function(req, res){
     res.sendStatus(404);

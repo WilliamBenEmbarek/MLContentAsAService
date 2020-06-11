@@ -1,6 +1,7 @@
 people
 people/
 *.jpeg
+notes.md
 
 # STANDARD JS GitIgnore
 # Logs

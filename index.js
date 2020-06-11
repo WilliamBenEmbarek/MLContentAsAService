@@ -4,10 +4,6 @@ var app = express();
 
 const generator = new ThisPersonDoesNotExist();
 
-function GeneratePerson(resX, resY) {
-
-}
-
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");

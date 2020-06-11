@@ -1,6 +1,5 @@
 var sharp = require("sharp");
 var request = require("request");
-var schedule = require("node-schedule");
 var EventEmitter = require("events");
 
 /**
@@ -11,11 +10,8 @@ var EventEmitter = require("events");
  */
 class ThisPersonDoesNotExist extends EventEmitter {
 
-    constructor(options) {
+    constructor() {
         super();
-        this.options = {
-            // thing: 'thing' in options ? options.thing : null
-        }
     }
 
     /**
@@ -53,7 +49,7 @@ class ThisPersonDoesNotExist extends EventEmitter {
                 if (error) return reject(error);
                 try {
                     if (response.statusCode == 200) {
-                        let img = new Buffer(body, 'base64');
+                        let img = Buffer.from(body,'base64');
                         let mimType = response.headers["content-type"];
                         resolve({
                             img,

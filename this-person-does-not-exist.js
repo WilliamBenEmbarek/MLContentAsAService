@@ -49,6 +49,7 @@ class ThisPersonDoesNotExist extends EventEmitter {
                 if (error) return reject(error);
                 try {
                     if (response.statusCode == 200) {
+                        // eslint-disable-next-line no-undef
                         let img = Buffer.from(body,'base64');
                         let mimType = response.headers["content-type"];
                         resolve({

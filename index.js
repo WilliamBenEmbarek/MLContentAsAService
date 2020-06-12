@@ -7,8 +7,8 @@ var deepAiRest = require('./requestHandlers/deepAiRequestHandler');
 var express = require("express");
 var app = express();
 
-app.listen(8080, () => {
-    console.log("Server running on port 8080");
+app.listen(3001, () => {
+    console.log("Server running on port 3001");
 });
 
 app.get("/person", (req, res, next) => {

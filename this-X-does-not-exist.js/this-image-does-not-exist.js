@@ -42,7 +42,7 @@ class thisImageDoesNotExist extends EventEmitter {
   async getRemoteImage(text) {
     console.log(text);
     var headers = {
-      "api-key": "21809966-1d3b-44f1-bec8-165fb11f2adc",
+      "api-key": "21809966-1d3b-44f1-bec8-165fb11f2adc"
     };
 
     return new Promise((resolve, reject) => {

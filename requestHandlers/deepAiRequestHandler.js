@@ -1,15 +1,16 @@
-var ThisCatDoesNotExist = require('./this-cat-does-not-exist')
-const catGen = new ThisCatDoesNotExist();
+var thisImageDoesNotExist = require('../this-X-does-not-exist.js/this-image-does-not-exist');
+const imageGen = new thisImageDoesNotExist();
 
-function requestHandler(req, res, next, resX, resY) {
-    catGen.getImage({
+function requestHandler(req, res, next, resX, resY, text) {
+    imageGen.getImage({
         width: parseInt(resX),
         height: parseInt(resY),
-        path: 'people'
+        path: 'deepAI',
+        text: text
     }).then(resA => {
-        console.log('genertated:', resA);
+        console.log('generated:', resA);
         var options = {
-            root: ('people'),
+            root: ('deepAI'),
             dotfiles: 'deny',
             headers: {
               'x-timestamp': Date.now(),

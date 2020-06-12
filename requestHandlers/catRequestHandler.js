@@ -1,15 +1,15 @@
-var ThisHorseDoesNotExist = require('./this-horse-does-not-exist')
-const horseGen = new ThisHorseDoesNotExist();
+var ThisCatDoesNotExist = require('../this-X-does-not-exist.js/this-cat-does-not-exist')
+const catGen = new ThisCatDoesNotExist();
 
 function requestHandler(req, res, next, resX, resY) {
-    horseGen.getImage({
+    catGen.getImage({
         width: parseInt(resX),
         height: parseInt(resY),
-        path: 'heeses'
+        path: 'people'
     }).then(resA => {
         console.log('genertated:', resA);
         var options = {
-            root: ('heeses'),
+            root: ('people'),
             dotfiles: 'deny',
             headers: {
               'x-timestamp': Date.now(),

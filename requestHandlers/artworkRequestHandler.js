@@ -1,16 +1,15 @@
-var thisImageDoesNotExist = require('./this-image-does-not-exist');
-const imageGen = new thisImageDoesNotExist();
+var ThisArtworkDoesNotExist = require('../this-X-does-not-exist.js/this-artwork-does-not-exist')
+const artGen = new ThisArtworkDoesNotExist();
 
-function requestHandler(req, res, next, resX, resY, text) {
-    imageGen.getImage({
+function requestHandler(req, res, next, resX, resY) {
+    artGen.getImage({
         width: parseInt(resX),
         height: parseInt(resY),
-        path: 'deepAI',
-        text: text
+        path: 'people'
     }).then(resA => {
-        console.log('generated:', resA);
+        console.log('genertated:', resA);
         var options = {
-            root: ('deepAI'),
+            root: ('people'),
             dotfiles: 'deny',
             headers: {
               'x-timestamp': Date.now(),

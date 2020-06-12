@@ -1,15 +1,15 @@
-var ThisPersonDoesNotExist = require('./this-person-does-not-exist')
-const personGen = new ThisPersonDoesNotExist();
+var ThisHorseDoesNotExist = require('../this-X-does-not-exist.js/this-horse-does-not-exist')
+const horseGen = new ThisHorseDoesNotExist();
 
 function requestHandler(req, res, next, resX, resY) {
-    personGen.getImage({
+    horseGen.getImage({
         width: parseInt(resX),
         height: parseInt(resY),
-        path: 'people'
+        path: 'heeses'
     }).then(resA => {
         console.log('genertated:', resA);
         var options = {
-            root: ('people'),
+            root: ('heeses'),
             dotfiles: 'deny',
             headers: {
               'x-timestamp': Date.now(),

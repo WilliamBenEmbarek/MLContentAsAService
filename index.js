@@ -1,8 +1,8 @@
-var personRest = require('./personRequestHandler');
-var catRest = require('./catRequestHandler');
-var artRest = require('./artworkRequestHandler');
-var horseRest = require('./horseRequestHandler');
-var deepAiRest = require('./deepAiRequestHandler');
+var personRest = require('./requestHandlers/personRequestHandler');
+var catRest = require('./requestHandlers/catRequestHandler');
+var artRest = require('./requestHandlers/artworkRequestHandler');
+var horseRest = require('./requestHandlers/horseRequestHandler');
+var deepAiRest = require('./requestHandlers/deepAiRequestHandler');
 
 var express = require("express");
 var app = express();

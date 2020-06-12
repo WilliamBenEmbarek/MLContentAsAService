@@ -1,8 +1,8 @@
-var ThisArtworkDoesNotExist = require('./this-artwork-does-not-exist')
-const artGen = new ThisArtworkDoesNotExist();
+var ThisPersonDoesNotExist = require('../this-X-does-not-exist.js/this-person-does-not-exist')
+const personGen = new ThisPersonDoesNotExist();
 
 function requestHandler(req, res, next, resX, resY) {
-    artGen.getImage({
+    personGen.getImage({
         width: parseInt(resX),
         height: parseInt(resY),
         path: 'people'
